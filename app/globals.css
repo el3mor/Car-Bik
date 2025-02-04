@@ -2,20 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
 }
+
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #676767; 
+    border-radius: 8px;
+  }
+
+}
+
+
+/* Import Fonts */
+
+@font-face {
+  font-family: 'DINNextArabic';
+  src: url('/fonts/DINNextLTArabic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINNextArabic';
+  src: url('/fonts/DINNextLTArabic-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINNextArabic';
+  src: url('/fonts/DINNextLTArabic-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINNextArabic';
+  src: url('/fonts/DINNextLTArabic-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINNextArabic';
+  src: url('/fonts/DINNextLTArabic-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINNextArabic';
+  src: url('/fonts/DINNextLTArabic-UltraLight.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
