@@ -16,7 +16,7 @@ const Testimonial = ({
 }) => {
   const [current, setCurrent] = useState(0)
   return (
-    <section id='testimonials' className="flex flex-col max-md:gap-20 md:flex-row items-center mb-20 justify-around py-20 ">
+    <section id='testimonials' className="flex relative z-50 flex-col max-md:gap-20 md:flex-row items-center mb-20 justify-around py-20 ">
       <div className='flex flex-col max-md:items-center max-md:justify-center gap-10'>
         <h1 className='text-[#8FC963] font-bold text-[44px]'>آراء عملائنا</h1>
         <p className='text-[24px] max-md:text-center font-medium max-md:max-w-[40rem] '>
