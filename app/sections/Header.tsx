@@ -52,6 +52,43 @@ const Header = ({data} : {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null, 
+      rootMargin: "0px",
+      threshold: 0.6, 
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          setActiveSection(id === "home" ? "/" : `#${id}`);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLinkClick = (href: string) => {
+    if (href === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={` z-50 fixed w-full top-0 left-0 flex justify-between md:justify-center items-center px-4 md:px-40 gap-12 duration-300 transition-all ${
         isScrolled ? "backdrop-blur-md bg-[#2C2C2C]/70" : "bg-[#2C2C2C]"}`}>
@@ -61,7 +98,7 @@ const Header = ({data} : {
         {sideLinks.map((link) => {
           const isActive = activeSection === link.href
           return (
-            <Link key={link.name} onClick={() => {setActiveSection(link.href)}} 
+            <Link key={link.name} onClick={(e) => {e.preventDefault(); handleLinkClick(link.href)}} 
             className={`${isActive && "text-[#8FC963] before:w-full  before:animate-border-appear"} 
             duration-300 transition-all before:border-[#8FC963] before:absolute relative before:border-b-2  before:bottom-0 pb-1`} href={link.href}>
               {link.name}
