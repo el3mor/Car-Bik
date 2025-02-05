@@ -3,9 +3,9 @@ import React from 'react'
 
 const homeLinks = [
   {title: 'الرئيسية', href: '/'},
-  { name: 'معلومات عنا', href: '/about' },
-  { name: 'الخدمات', href: '/services' },
-  { name: 'تواصل معنا', href: '/contact' },
+  { name: 'معلومات عنا', href: '#about' },
+  { name: 'الخدمات', href: '#services' },
+  { name: 'تواصل معنا', href: '#contact' },
 ]
 
 const contactMethods = [
