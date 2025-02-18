@@ -20,8 +20,8 @@ const sideLinks = [
     href: '#services',
   },
   {
-    name: 'ليه تختارنا',
-    href: '#why-us',
+    name: 'المقالات',
+    href: '#blogs',
   },
   {
     name:"آراء العملاء",
@@ -90,7 +90,7 @@ const Header = ({data} : {
   };
 
   return (
-    <header className={` z-50 fixed w-full top-0 left-0 flex justify-between md:justify-center items-center px-4 md:px-40 gap-12 duration-300 transition-all ${
+    <header className={` z-50 fixed w-full top-0 left-0 flex justify-between md:justify-center items-center px-4 md:px-40 gap-12 duration-300 transition-all overflow-y-hidden ${
         isScrolled ? "backdrop-blur-md bg-[#2C2C2C]/70" : "bg-[#2C2C2C]"}`}>
       
       <Image src={data.logo} alt='Car Bik' width={85} height={138} />
