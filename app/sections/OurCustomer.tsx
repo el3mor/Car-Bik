@@ -23,10 +23,10 @@ const OurCustomer = () => {
     const width = brandRef.current.scrollWidth / 3; 
 
     gsap.to(brandRef.current, {
-      x: `-${width}px`, // التحريك للأمام
-      duration: 10, // مدة الحركة
-      ease: "linear", // يجعل الحركة سلسة بدون توقف
-      repeat: -1, // يجعلها لا نهائية
+      x: `-${width}px`, 
+      duration: 10, 
+      ease: "linear", 
+      repeat: -1, 
       modifiers: {
         x: (x) => `${parseFloat(x) % width}px`, 
       },
