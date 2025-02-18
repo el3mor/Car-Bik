@@ -53,6 +53,7 @@ const Footer = () => {
          <img src='/images/visa.svg'/>
          <img src='/images/mastercard.svg'/>
          <img src='/images/mada.svg'/>
+         <img src='/images/tabby.svg'/>
         
         </div>
       </div>

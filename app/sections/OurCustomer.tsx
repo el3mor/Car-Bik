@@ -1,62 +1,60 @@
-"use client"
-import gsap from "gsap"
+"use client";
+
+import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
+
+const brands = [
+  { src: "/images/audi.png", alt: "Audi" },
+  { src: "/images/bentley.png", alt: "Bentley" },
+  { src: "/images/bmw.png", alt: "BMW" },
+  { src: "/images/ferrari.png", alt: "Ferrari" },
+  { src: "/images/mercedes.png", alt: "Mercedes" },
+  { src: "/images/toyot.png", alt: "Toyota" },
+  { src: "/images/maybach.png", alt: "Maybach" },
+];
 
 const OurCustomer = () => {
-  const brandRef = useRef<HTMLDivElement>(null)
-  const brands = [
-    { src: "/images/audi.png", alt: "audi" },
-    { src: "/images/bentley.png", alt: "bentley" },
-    { src: "/images/bmw.png", alt: "bmw" },
-    { src: "/images/ferrari.png", alt: "ferrari" },
-    { src: "/images/mercedes.png", alt: "mercedes" },
-    { src: "/images/toyot.png", alt: "toyota" },
-    { src: "/images/maybach.png", alt: "maybach" },
-  ];
+  const brandRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!brandRef.current) return;
 
-    const totalWidth = brandRef.current.scrollWidth ;
+    const width = brandRef.current.scrollWidth / 3; 
 
-    const animation = gsap.fromTo(
-      brandRef.current,
-      { left: 0 },
-      {
-        left: totalWidth,
-        duration: 20,
-        ease: "none",
-        repeat: -1,
-      }
-    );
-
-    return () => {
-      animation.kill();
-    };
+    gsap.to(brandRef.current, {
+      x: `-${width}px`, // التحريك للأمام
+      duration: 10, // مدة الحركة
+      ease: "linear", // يجعل الحركة سلسة بدون توقف
+      repeat: -1, // يجعلها لا نهائية
+      modifiers: {
+        x: (x) => `${parseFloat(x) % width}px`, 
+      },
+    });
   }, []);
-  
-  return (
-    <section id='our-customer' className='w-screen min-h-dvh  mt-24  px-10 md:px-20  mx-auto '>
-      <div className="flex items-center  gap-20 flex-col">
-      <h1 className='text-[#8FC963] font-bold text-3xl max-md:text-center md:text-5xl'>العلامات التجارية التي نخدمها باحترافية</h1>
-      <p className='md:text-[26px] mx-auto font-medium  text-[18px] text-center'>
-      نقدم مجموعة متكاملة من خدمات العناية بالسيارات، من إصلاح الصدمات إلى التلميع والحماية، لجميع العلامات التجارية الموثوقة، بأعلى معايير الجودة والتقنيات الحديثة.
-      </p>
 
-          <div ref={brandRef} className="relative flex justify-start items-start gap-10 mt-10 ">
-            {[...brands, ...brands].map((brand, index) => (
-              <img
-                key={index}
-                src={brand.src}
-                alt={brand.alt}
-                className="w-[300px] h-[300px]  object-contain"
-                loading="lazy"
-              />
-            ))}
+  return (
+    <section id="our-customer" className="w-screen overflow-hidden py-10 ">
+      <div className="text-center text-white mb-8">
+        <h1 className="text-[#8FC963] font-bold text-3xl md:text-5xl">
+          العلامات التجارية التي نخدمها باحترافية
+        </h1>
+        <p className="text-lg md:text-2xl mt-4 max-w-3xl mx-auto">
+          نقدم مجموعة متكاملة من خدمات العناية بالسيارات، لجميع العلامات التجارية الموثوقة، بأعلى معايير الجودة.
+        </p>
+      </div>
+
+      <div className="relative w-full flex justify-center">
+        <div ref={brandRef} className="flex gap-10 min-w-max">
+          {[...brands, ...brands].map((brand, index) => (
+            <div key={index} className="w-[200px] h-[200px] relative">
+              <Image src={brand.src} alt={brand.alt} layout="fill" objectFit="contain" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default OurCustomer
+export default OurCustomer;

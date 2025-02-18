@@ -14,7 +14,7 @@ const Hero = ({
   }
 }) => {
   return (
-    <section id="home" className='relative overflow-x-hidden animate-opacity  w-screen min-h-dvh mb-20'>
+    <section id="home" className='relative max-2xl:mt-28  animate-opacity  w-screen min-h-dvh mb-20'>
       <div className=" flex md:flex-row flex-col-reverse items-center gap-10 justify-center px-6 md:px-20 w-full h-full max-md:mt-28 ">
         <div className='flex flex-col gap-10 max-md:items-center justify-center max-md:text-center '>
           <h2 className='text-[#B0B0B0] text-[18px]  md:text-[28px]'>أفضل خدمات الصيانة لسيارتك الآن في مكان واحد</h2>
@@ -25,7 +25,7 @@ const Hero = ({
         <div className='flex  justify-center items-center'>
           <img src='/images/hero-img.png' alt='Car' className='w-[930px] h-full -scale-x-100' />
         </div>
-        <div className="absolute max-md:hidden bottom-[-24%] md:bottom-20 left-50 flex items-center gap-14 justify-around py-4 px-6 border border-white rounded-xl bg-[#484848]">
+        <div className="absolute max-md:hidden max-2xl:-bottom-8  bottom-0 left-50 flex items-center gap-14 justify-around py-4 px-6 border border-white rounded-xl bg-[#484848]">
           <div className="flex gap-2 items-center">
             <img src="/images/car.svg" className='text-base' alt="test" />
             <p className='flex gap-2 md:text-lg text-[12px] items-center font-bold'> +<Counter end={data?.["site-statistic"]?.[0].value ?? 0}/> سيارة </p>

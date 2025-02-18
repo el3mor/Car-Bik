@@ -9,10 +9,10 @@ const PageDeatils = ({
   description?: string
 }) => {
   return (
-    <section className='relative h-[200dvh]'>
+    <section className='relative min-h-[200dvh]'>
       <div className="section-overlay"></div>
       <div className='flex flex-col py-12  relative z-10 px-16 gap-6'>
-        {title && <h1 className="md:text-[44px] text-[32px] font-bold text-[#8FC963]">{title}:{description}</h1>}
+        {title && <h1 className="max-2xl:text-[44px] text-[32px] font-bold text-[#8FC963]">{title}:{description}</h1>}
         <div className='flex flex-col gap-4 md:text-[22px] text-[18px] font-semibold'>
           <p>تخلص من الصدمات والخدوش بدون الحاجة لإعادة الطلاء</p>
           <p>✅ الخدمة المتوفرة لدينا: شفط الصدمات وإصلاح الهيكل باستخدام تقنية BDR المتطورة، والتي تعتمد على إصلاح الصدمات دون الحاجة إلى إعادة طلاء السيارة، مما يحافظ على مظهرها الأصلي.</p>
