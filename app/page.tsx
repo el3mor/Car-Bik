@@ -13,10 +13,10 @@ export default async function Home() {
     <div className="relative overflow-x-hidden">
       <main className="min-h-screen">
         <Hero data={data}/>
-        <About data={data.about}/>
+        <About />
         <Services data={data.services}/>
         <OurCustomer/>
-        <Blogs data={data.services} />
+        <Blogs data={data.blogs} />
         <Testimonial data={data.testimonial}/>
         <Contact/>
       </main>

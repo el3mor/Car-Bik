@@ -22,7 +22,7 @@ export default async function RootLayout({
       <body
         className={`font-din  antialiased bg-[#343434] text-white `}
       >
-        <Header data={data}/>
+        <Header />
         {children}
         <Footer />
       </body>

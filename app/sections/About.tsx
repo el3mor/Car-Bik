@@ -6,14 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
 
-const About = ({
-  data
-}: {
-  data: {
-    title: string,
-    value: string
-  }[]
-}) => {
+const About = () => {
   useLayoutEffect(() => {
     const context = gsap.context(() => {
       gsap.to("#about", {
@@ -85,14 +78,14 @@ const About = ({
       <div id='details-section' className='flex flex-col  gap-10 '>
         <div className='flex flex-col gap-4'>
           <h3 className='text-xl font-bold text-[#8FC963]'>من نحن</h3>
-          <h1 className='text-3xl font-bold text-[#8FC963]'>{data[0].title}</h1>
+          <h1 className='text-3xl font-bold text-[#8FC963]'>كار بك - خبراء العناية بسيارتك!</h1>
         </div>
-        <p className='text-[17px] font-medium max-w-[25rem]'>{data[0].value}
+        <p className='text-[17px] font-medium max-w-[25rem]'>في هوا كار بك، نقدم خدمات صيانة احترافية بأعلى معايير الجودة، لضمان أداء سيارتك بكفاءة وأمان. فريقنا من الخبراء يعمل بأحدث التقنيات لتوفير تجربة صيانة مريحة وموثوقة.
           </p>
           <div className='flex flex-col gap-4'>
-          <h3 className='text-xl font-bold text-[#8FC963]'>{data[1].title}</h3>
+          <h3 className='text-xl font-bold text-[#8FC963]'>رؤيتنا</h3>
           <p className='text-[17px] font-medium max-w-[25rem]'>
-            {data[1].value}
+          أن نكون الخيار الأول في المملكة العربية السعودية لخدمات صيانة السيارات، من خلال تقديم حلول مبتكرة، وخدمة عملاء استثنائية، وتقنيات متطورة تضمن أعلى معايير الجودة والأمان لسيارتك.
           </p>
         </div>
         <Button className='bg-[#8FC963] text-white hover:bg-[#8FC963]/70' />   

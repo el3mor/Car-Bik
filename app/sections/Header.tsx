@@ -33,11 +33,7 @@ const sideLinks = [
   }
 ]
 
-const Header = ({data} : {
-  data: {
-    logo: string
-  }
-}) => {
+const Header = () => {
   
   const [activeSection, setActiveSection] = useState('/')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -90,10 +86,10 @@ const Header = ({data} : {
   };
 
   return (
-    <header className={` z-50 fixed w-full top-0 left-0 flex justify-between md:justify-center items-center px-4 md:px-40 gap-12 duration-300 transition-all overflow-y-hidden ${
+    <header className={` z-50 fixed w-full top-0 left-0 flex justify-between md:justify-center items-center px-4 md:px-40 gap-12 duration-300 transition-all ${
         isScrolled ? "backdrop-blur-md bg-[#2C2C2C]/70" : "bg-[#2C2C2C]"}`}>
       
-      <Image src={data.logo} alt='Car Bik' width={85} height={138} />
+      <Image src="/images/carbik-logo.png" alt='Car Bik' width={85} height={138} />
       <nav className='hidden md:flex justify-center items-center gap-10 flex-1   sm:text-base md:text-lg '>
         {sideLinks.map((link) => {
           const isActive = activeSection === link.href

@@ -7,6 +7,7 @@ import { Metadata } from 'next'
 import { HiOutlineEmojiSad } from 'react-icons/hi'
 
 
+
 export async function generateMetadata({
   params
 }: {
@@ -14,7 +15,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const data = await getData()
   const { blogID } = await params
-  const currentBlog = data.services[blogID]
+  const currentBlog = data.blogs.find((blog: { id: number }) => blog.id === parseInt(blogID))
+
   if (!currentBlog) {
     return {
       title: {
@@ -27,7 +29,7 @@ export async function generateMetadata({
   return {
     title: {
       template: "%s | مقالاتنا",
-      default: currentBlog.title
+      default: `${currentBlog.title}`
     },
     description: currentBlog.description
   }
@@ -42,7 +44,7 @@ const page = async ({
 }) => {
   const data = await getData()
   const { blogID } = await params
-  const currentBlog = data.services[blogID]
+  const currentBlog = data.blogs.find((blog: { id: number }) => blog.id === parseInt(blogID))
   if (!currentBlog) {
     return (
       <div className="relative flex flex-col items-center gap-20 justify-center min-h-dvh">
@@ -60,9 +62,9 @@ const page = async ({
         <h1 className="md:text-[44px] text-[32px] text-[#8FC963]">{currentBlog.title}</h1>
         <p className="md:text-[24px] text-[15px] text-center max-w-[94rem]" >{currentBlog.description}</p>
         </div>
-        <Image src="/images/blog-img.png" className='-scale-x-100' alt={currentBlog.title} width={1000} height={800} />
+        <Image src={currentBlog.img} className='-scale-x-100' alt={currentBlog.title} width={1000} height={800} />
       </section>
-      <PageDeatils />
+      <PageDeatils body={currentBlog.body}/>
     </div>
   )
 }

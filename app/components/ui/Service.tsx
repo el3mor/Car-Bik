@@ -10,14 +10,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Service = ({
   service,
-  index
+
 }: {
   service: {
     title: string
     img: string
-    description: string
+    description: string,
+    id:number
   },
-  index:number
 }) => {
   const serviceRef = useRef<HTMLDivElement>(null)
   useLayoutEffect(() => {
@@ -50,7 +50,7 @@ const Service = ({
   return (
 
     <div ref={serviceRef}>
-    <Link href={`/services/${index}`} className='flex relative flex-col  gap-3 px-6 pt-4 pb-10 bg-gradient-to-b from-[rgba(250,249,246,0.2)] to-[rgba(250,249,246,0)] rounded-xl border-t-2 border-t-[#FAF9F6]
+    <Link href={`/services/${service.id}`} className='flex relative flex-col  gap-3 px-6 pt-4 pb-10 bg-gradient-to-b from-[rgba(250,249,246,0.2)] to-[rgba(250,249,246,0)] rounded-xl border-t-2 border-t-[#FAF9F6]
                     before:absolute before:top-[49%] before:-translate-y-1/2 before:-left-[1px] before:bg-gradient-to-b  before:from-[rgba(250,249,246,0.7)] before:to-[rgba(250,249,246,0)] before:w-[1.5px] before:rounded-tl-xl before:h-[calc(100%-20px)]  before:rounded-xl
                     after:absolute after:top-[49%] after:-translate-y-1/2 after:-right-[1px] after:bg-gradient-to-b  after:from-[rgba(250,249,246,0.7)] after:to-[rgba(250,249,246,0)] after:w-[1.5px] after:rounded-tr-xl after:h-[calc(100%-20px)]  after:rounded-xl'
     >

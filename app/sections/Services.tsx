@@ -8,7 +8,8 @@ const Services = ({
   data: {
     title: string
     img: string
-    description: string
+    description: string,
+    id:number
   }[]
 }) => {
   return (
@@ -21,8 +22,8 @@ const Services = ({
       </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-10 mt-20">
-        {data.map((service:{title:string, img:string, description:string}, index:number) => (
-          <Service key={index} service={service} index={index} />
+        {data.map((service:{title:string, img:string, description:string, id:number}, index:number) => (
+          <Service key={index} service={service} />
         ))}
       </div>
     </section>
