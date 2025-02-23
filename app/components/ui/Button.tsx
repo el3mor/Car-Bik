@@ -9,7 +9,8 @@ const Button = ({
   msgInput,
   text = " احجز موعدك الان",
   customLink = false,
-  link
+  link,
+  blank = true
 } : {
   className?: string,
   withMsg?: boolean,
@@ -17,7 +18,7 @@ const Button = ({
   text?: string,
   customLink?: boolean,
   link?: string
-  
+  blank?: boolean
 }) => {
   const [phoneNum, setPhoneNum] = React.useState('')
   useEffect(() => {
@@ -31,7 +32,7 @@ const Button = ({
   return (
     <Link className={`${className} flex items-center justify-center px-6 py-3 rounded-md w-[300px] duration-300`}
       href={customLink ? link || '#' : `https://wa.me/${phoneNum}?${withMsg ? `text=${msg}` : ''}`}
-      target="_blank"
+      {...(blank ? { target: '_blank' } : {})}
       ref={ref => ref?.setAttribute('rel', 'noopener noreferrer')}
     >
      {text}
