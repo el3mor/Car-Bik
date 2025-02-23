@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./sections/Header";
 import Footer from "./sections/Footer";
 import { getData } from "./hooks/getData";
 
@@ -22,7 +21,7 @@ export default async function RootLayout({
       <body
         className={`font-din  antialiased bg-[#343434] text-white `}
       >
-        <Header />
+        
         {children}
         <Footer contactMethods={data.contactmethods}/>
       </body>
