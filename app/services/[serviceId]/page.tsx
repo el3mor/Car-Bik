@@ -8,14 +8,6 @@ import { Metadata } from 'next'
 import { HiOutlineEmojiSad } from 'react-icons/hi'
 
 
-export async function generateStaticParams() {
-  const data = await getData()
-  return data.services.map((service: { id: number }) => ({
-    params: {
-      serviceId: service.id.toString()
-    }
-  }))
-}
 
 export async function generateMetadata({
   params
@@ -52,7 +44,6 @@ const page = async ({
   const data = await getData()
   const { serviceId } = await params
   const currentService = data.services.find((service: { id: number }) => service.id === parseInt(serviceId))
-  console.log(currentService)
   if (!currentService) {
     return (
       <div className="min-h-dvh flex flex-col items-center justify-center">
