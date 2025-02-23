@@ -1,7 +1,8 @@
 
-import axios from "axios";
-
 export async function getData() {
-  const { data } = await axios.get("https://api.carbik.shop/api/app")
+  const res = await fetch("https://api.carbik.shop/api/app", {
+    next:{revalidate:0}
+  });
+  const data = await res.json();
   return data;
 }
