@@ -59,7 +59,7 @@ const page = async ({
       <section className="pt-44  flex flex-col items-center justify-center gap-12 ">
         <div className='flex flex-col text-center items-center justify-center gap-6'>
         <h1 className="md:text-[44px] text-[32px] text-[#8FC963]">خدماتنا الاحترافية لعناية متكاملة بسيارتك</h1>
-        <p className="md:text-[24px] text-[15px] text-center max-w-[94rem]" >نقدم مجموعة متكاملة من الخدمات للحفاظ على سيارتك بأفضل حال، بدءًا من إصلاح الصدمات بتقنيات متطورة، والتلميع الاحترافي، وحتى الحماية بالنانو سيراميك وPPF. استمتع بمظهر متجدد وحماية تدوم مع خدماتنا عالية الجودة</p>
+        <p className="md:text-[24px] text-[15px] text-center max-2xl:px-16 2xl:max-w-[94rem]" >نقدم مجموعة متكاملة من الخدمات للحفاظ على سيارتك بأفضل حال، بدءًا من إصلاح الصدمات بتقنيات متطورة، والتلميع الاحترافي، وحتى الحماية بالنانو سيراميك وPPF. استمتع بمظهر متجدد وحماية تدوم مع خدماتنا عالية الجودة</p>
         </div>
         <Image src={currentService.img} alt={currentService.title} width={1000} height={800} />
       </section>

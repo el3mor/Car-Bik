@@ -10,6 +10,7 @@
     "server": "next build && next start -p 7654"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "axios": "^1.7.9",
     "gsap": "^3.12.7",
     "next": "15.1.6",
@@ -29,4 +30,3 @@
     "typescript": "^5"
   }
 }
-  
