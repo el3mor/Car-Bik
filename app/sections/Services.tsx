@@ -21,7 +21,7 @@ const Services = ({
        استمتع بمظهر متجدد وحماية تدوم مع خدماتنا عالية الجودة
       </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-10 mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
         {data.map((service:{title:string, img:string, description:string, id:number}, index:number) => (
           <Service key={index} service={service} />
         ))}
