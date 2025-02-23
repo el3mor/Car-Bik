@@ -22,10 +22,11 @@ const Button = ({
   const [phoneNum, setPhoneNum] = React.useState('')
   useEffect(() => {
     getData().then((data) => {
-      setPhoneNum(data["whatsapp-phone"])
+      console.log(data)
+      setPhoneNum(data["whatsapp_phone"])
     })
   },[])
-
+  console.log(phoneNum)
   const msg = encodeURIComponent(msgInput || 'أرغب في حجز موعد لخدمة تلميع السيارة')
   return (
     <Link className={`${className} flex items-center justify-center px-6 py-3 rounded-md w-[300px] duration-300`}

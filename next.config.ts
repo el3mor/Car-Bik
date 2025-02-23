@@ -2,9 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images:{
-    domains: ['s3-alpha-sig.figma.com']
+    domains: ['api.carbik.shop']
   },
-  distDir: 'build',
 };
 
 export default nextConfig;

@@ -73,7 +73,7 @@ const page = async ({
         <Image src={currentService.img} alt={currentService.title} width={1000} height={800} />
       </section>
       <PageDeatils title={currentService.title} description={currentService.description} body={currentService.body} />
-      <BeforeAfterPage />
+      <BeforeAfterPage media={currentService.media} />
     </div>
   )
 }

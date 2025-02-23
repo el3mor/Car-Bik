@@ -24,7 +24,7 @@ export default async function RootLayout({
       >
         <Header />
         {children}
-        <Footer />
+        <Footer contactMethods={data.contactmethods}/>
       </body>
     </html>
   );

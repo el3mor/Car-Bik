@@ -7,7 +7,8 @@ const Blogs = ({
   data: {
     title: string
     img: string
-    description: string
+    description: string,
+    id: number
   }[]
 }) => {
   return (
@@ -19,8 +20,8 @@ const Blogs = ({
       </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-10 mt-20">
-        {data.map((blog:{title:string, img:string, description:string}, index:number) => (
-          <BlogCard key={index} blog={blog} index={index} />
+        {data.map((blog:{title:string, img:string, description:string, id:number}) => (
+          <BlogCard key={blog.id} blog={blog}  />
         ))}
       </div>
     </section>

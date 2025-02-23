@@ -64,7 +64,7 @@ const page = async ({
         </div>
         <Image src={currentBlog.img} className='-scale-x-100' alt={currentBlog.title} width={1000} height={800} />
       </section>
-      <PageDeatils body={currentBlog.body}/>
+      <PageDeatils title={currentBlog.title} body={currentBlog.body}/>
     </div>
   )
 }
