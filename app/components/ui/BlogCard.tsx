@@ -64,7 +64,7 @@ const BlogCard = (
       
     </Link>
     <div className='flex justify-center mt-10'>
-    <Button className='bg-[#8FC963] text-white hover:bg-[#8FC963]/70 ' text='اقرأ المزيد' customLink link={`/blogs/${blog.id}`} withMsg msgInput={`اريد حجز موعد لخدمة ${blog.title}`} blank={false} />e
+    <Button className='bg-[#8FC963] text-white hover:bg-[#8FC963]/70 ' text='اقرأ المزيد' customLink link={`/blogs/${blog.id}`} withMsg msgInput={`اريد حجز موعد لخدمة ${blog.title}`} blank={false} />
     </div>
   </div>
   )
