@@ -20,7 +20,7 @@ export default async function Home() {
         <OurCustomer/>
         <Blogs data={data.blogs} />
         <Testimonial data={data.testimonial}/>
-        <Contact/>
+        <Contact whatsapp={data["whatsapp_phone"]} />
       </main>
     </div> );
 }

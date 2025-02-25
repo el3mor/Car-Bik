@@ -24,7 +24,7 @@ const Footer = ({
   }[]
 }) => {
   return (
-    <footer className='bg-[#484848] md:pt-20 pb-5 mt-7 px-4 md:px-20 flex  justify-center flex-col gap-10 relative overflow-hidden'>
+    <footer className='bg-[#484848] md:pt-20 pb-5  px-4 md:px-20 flex  justify-center flex-col gap-10 relative overflow-hidden'>
       <div className='flex max-md:flex-col items-center gap-10  justify-between'>
         <div className='flex flex-col md:w-1/2 gap-4'>
             <Image src="/images/carbik-logo.png" alt='Car Bik' width={120} height={138} />
