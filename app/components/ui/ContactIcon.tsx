@@ -5,7 +5,7 @@ import { IoCall } from "react-icons/io5";
 
 const ContactIcon = ({phone}: {phone:string}) => {
   return (
-    <div className="fixed bottom-2 left-2 z-10 flex flex-col gap-4  items-center justify-center">
+    <div className="fixed bottom-2 left-2 z-[60] flex flex-col gap-4  items-center justify-center">
       <Link
         href={`https://wa.me/${phone}`}
         target="_blank"
