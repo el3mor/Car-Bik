@@ -10,15 +10,15 @@ const ContactIcon = ({phone}: {phone:string}) => {
         href={`https://wa.me/${phone}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex h-10 w-10  md:h-12 md:w-12 items-center justify-center rounded-full bg-green-500 text-white  shadow-lg transition duration-300 ease-in-out hover:bg-green-600"
+        className="flex h-14 w-14  md:h-12 md:w-12 items-center justify-center rounded-full bg-green-500 text-white  shadow-lg transition duration-300 ease-in-out hover:bg-green-600"
       >
-        <FaWhatsapp size={32} />
+        <FaWhatsapp size={37} />
       </Link>
       <Link
         href={`tel:${phone}`}
-        className="flex h-10 w-10  md:hidden items-center justify-center rounded-full bg-blue-500 text-white  shadow-lg transition duration-300 ease-in-out hover:bg-blue-600"
+        className="flex h-14 w-14 md:hidden items-center justify-center rounded-full bg-blue-500 text-white  shadow-lg transition duration-300 ease-in-out hover:bg-blue-600"
       >
-        <IoCall size={24} />
+        <IoCall size={30} />
       </Link>
     </div>
   );
