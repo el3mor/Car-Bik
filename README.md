@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Car-Bik – Technical Overview
 
-## Getting Started
+This project is a modern web application built with a focus on scalability, maintainability, and developer experience. Below is a detailed overview of the technologies, architecture, and development patterns used.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework:**  
+  [Next.js 15](https://nextjs.org/) (App Router, SSR/SSG, API routes)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Language:**  
+  [TypeScript](https://www.typescriptlang.org/) (type safety, better tooling)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **UI Library:**  
+  [React 19](https://react.dev/)
 
-## Learn More
+- **Styling:**  
+  [Tailwind CSS](https://tailwindcss.com/) (utility-first CSS framework)  
+  [@tailwindcss/line-clamp](https://github.com/tailwindlabs/tailwindcss-line-clamp) for text truncation
 
-To learn more about Next.js, take a look at the following resources:
+- **Animation:**  
+  [GSAP](https://greensock.com/gsap/) (GreenSock Animation Platform) for smooth, performant UI animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **HTTP Client:**  
+  [Axios](https://axios-http.com/) for API requests
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Icons:**  
+  [React Icons](https://react-icons.github.io/react-icons/)
 
-## Deploy on Vercel
+- **Linting:**  
+  [ESLint](https://eslint.org/) with [eslint-config-next](https://nextjs.org/docs/pages/building-your-application/configuring/eslint)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+- `app/`
+  - `sections/` – Page sections as React components (modular, reusable)
+  - `components/` – UI components (Button, BlogCard, etc.)
+  - `hooks/` – Custom hooks (e.g., data fetching)
+  - `services/` and `blogs/` – Dynamic routes for service/blog details
+  - `globals.css` – Global styles (Tailwind base)
+- `public/` – Static assets (images, fonts)
+- `next.config.ts` – Next.js configuration
+- `tailwind.config.ts` – Tailwind CSS configuration
+
+---
+
+## ⚙️ Data Fetching & API
+
+- Uses a custom hook (`getData.ts`) to fetch data from a backend API.
+- API endpoint is configured via the `NEXT_PUBLIC_API_URL` environment variable.
+- Data is fetched server-side for SEO and performance, with revalidation for freshness.
+
+---
+
+## 🧩 Component Architecture
+
+- **Atomic Design Principles:**  
+  Components are organized for reusability and clarity (UI elements, sections, pages).
+- **Client/Server Components:**  
+  Leverages Next.js App Router's distinction for optimal rendering.
+
+---
+
+## 🎨 Styling & Theming
+
+- **Tailwind CSS** is used for rapid UI development and consistent design.
+- Custom color palette and responsive design are implemented via Tailwind config.
+
+---
+
+## 🖼️ Animations
+
+- **GSAP** is used for scroll-based and interactive animations, enhancing user experience without sacrificing performance.
+
+---
+
+## 🧪 Linting & Code Quality
+
+- **ESLint** is set up with Next.js best practices.
+- TypeScript ensures type safety across the codebase.
+
+---
+
+## 🚀 Scripts
+
+- `npm run dev` – Start development server
+- `npm run build` – Build for production
+- `npm start` – Start production server
+- `npm run lint` – Run linter
+
+---
+
+## 🌐 Deployment
+
+- Ready for deployment on Vercel, Netlify, or any Node.js-compatible host.
+- Static assets are served from the `public/` directory.
+
+---
+
+## 📝 Environment Variables
+
+- `NEXT_PUBLIC_API_URL` – Backend API endpoint for data fetching
+
+---
+
+## 📦 Dependencies
+
+See `package.json` for a full list of dependencies and versions.
+
+---
+
+## 👨‍💻 Development Notes
+
+- Modular, scalable structure for easy feature expansion
+- Follows modern React and Next.js conventions
+- Arabic language support in UI and content
