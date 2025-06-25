@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
-import Image from "next/image";
+import gsap from 'gsap';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 const brands = [
-  { src: "/images/audi.png", alt: "Audi" },
-  { src: "/images/bentley.png", alt: "Bentley" },
-  { src: "/images/bmw.png", alt: "BMW" },
-  { src: "/images/ferrari.png", alt: "Ferrari" },
-  { src: "/images/mercedes.png", alt: "Mercedes" },
-  { src: "/images/toyot.png", alt: "Toyota" },
-  { src: "/images/maybach.png", alt: "Maybach" },
+  { src: '/images/audi.png', alt: 'Audi' },
+  { src: '/images/bentley.png', alt: 'Bentley' },
+  { src: '/images/bmw.png', alt: 'BMW' },
+  { src: '/images/ferrari.png', alt: 'Ferrari' },
+  { src: '/images/mercedes.png', alt: 'Mercedes' },
+  { src: '/images/toyot.png', alt: 'Toyota' },
+  { src: '/images/maybach.png', alt: 'Maybach' },
 ];
 
 const OurCustomer = () => {
@@ -20,15 +20,15 @@ const OurCustomer = () => {
   useEffect(() => {
     if (!brandRef.current) return;
 
-    const width = brandRef.current.scrollWidth / 3; 
+    const width = brandRef.current.scrollWidth / 3;
 
     gsap.to(brandRef.current, {
-      x: `-${width}px`, 
-      duration: 10, 
-      ease: "linear", 
-      repeat: -1, 
+      x: `-${width}px`,
+      duration: 10,
+      ease: 'linear',
+      repeat: -1,
       modifiers: {
-        x: (x) => `${parseFloat(x) % width}px`, 
+        x: (x) => `${parseFloat(x) % width}px`,
       },
     });
   }, []);
@@ -36,11 +36,12 @@ const OurCustomer = () => {
   return (
     <section id="our-customer" className="w-screen overflow-hidden py-10 ">
       <div className="text-center text-white mb-8">
-        <h1 className="text-[#8FC963] font-bold text-3xl md:text-5xl">
+        <h2 className="text-[#8FC963] font-bold text-3xl md:text-5xl">
           العلامات التجارية التي نخدمها باحترافية
-        </h1>
+        </h2>
         <p className="text-lg md:text-2xl mt-4 max-w-3xl mx-auto">
-          نقدم مجموعة متكاملة من خدمات العناية بالسيارات، لجميع العلامات التجارية الموثوقة، بأعلى معايير الجودة.
+          نقدم مجموعة متكاملة من خدمات العناية بالسيارات، لجميع العلامات التجارية الموثوقة، بأعلى
+          معايير الجودة.
         </p>
       </div>
 
