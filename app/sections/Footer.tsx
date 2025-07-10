@@ -69,21 +69,21 @@ const Footer = ({
       <div className="flex items-center justify-center gap-6">
         <Link
           target="_blank"
-          href="https://www.tiktok.com/@car_bik?_t=ZS-8txio0pLbUe&_r=1"
+          href="https://www.tiktok.com/@carbik.shop"
           className="w-10 h-10 rounded-full flex items-center justify-center bg-[#8FC963]"
         >
           <FaTiktok />
         </Link>
         <Link
           target="_blank"
-          href="https://youtube.com/@carbik_shop?si=pkgcj4pcxk1EYwk3"
+          href="https://www.youtube.com/@carbik_shop"
           className="w-10 h-10 rounded-full flex items-center justify-center bg-[#8FC963]"
         >
           <FaYoutube />
         </Link>
         <Link
           target="_blank"
-          href="https://www.instagram.com/carbik_shop?igsh=MWYwdWJ5NmZrOTdnZA=="
+          href="https://www.instagram.com/carbik.shop"
           className="w-10 h-10 rounded-full flex items-center justify-center bg-[#8FC963]"
         >
           <FaInstagram />
@@ -97,14 +97,14 @@ const Footer = ({
         </Link>
         <Link
           target="_blank"
-          href="https://x.com/CARBIK_SHOP?t=zyNmUiXW-aqXuK-f98JdtA&s=09"
+          href="https://x.com/CARBIK_SHOP"
           className="w-10 h-10 rounded-full flex items-center justify-center bg-[#8FC963]"
         >
           <FaXTwitter />
         </Link>
         <Link
           target="_blank"
-          href="https://www.facebook.com/share/18XcY1MZsS/"
+          href="https://www.facebook.com/profile.php?id=100026671786076"
           className="w-10 h-10 rounded-full flex items-center justify-center bg-[#8FC963]"
         >
           <FaFacebookF />
